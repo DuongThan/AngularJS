@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html ng-app="main">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="../../Script/angular.min.js"></script>
+    <script src="script.js"></script>
+    <link href="../../style/style-table.css" rel="stylesheet" />
+</head>
+<body>
+    <div ng-controller="controller">
+        {{err}}
+        <table>
+            <thead>
+                <tr>
+                    <th>EmployeeID</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="model in model">
+                    <td>{{model.EmployeeID}}</td>
+                    <td>{{model.Name}}</td>
+                    <td>{{model.Gender}}</td>
+                    <td>{{model.Salary}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿
+<input type="checkbox" ng-model="hideaddress" /> Hide Address
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th ng-hide="hideaddress">Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="model in model">
+            <td>{{model.name}}</td>
+            <td>{{model.age}}</td>
+            <td ng-show="hide(model.gender)">{{model.gender}}</td>
+            <td ng-show="!hide(model.gender)">###</td>
+            <td ng-hide="hideaddress">{{model.address}}</td>
+        </tr>
+    </tbody>
+</table>
+<input type="button" ng-click="showgender()" value="Show Hide gender 1,2" />

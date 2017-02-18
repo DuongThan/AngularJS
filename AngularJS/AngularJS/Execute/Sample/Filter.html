@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html ng-app="main">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="../Script/angular.min.js"></script>
+    <script src="../Script/Filter/script.js"></script>
+    <style type="text/css">
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th {
+            border: 1px solid #000;
+            padding: 5px 10px;
+        }
+
+        td {
+            border: 1px solid #000;
+            padding: 5px 10px;
+        }
+
+        .arrow-up {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 10px solid black;
+            display:inline-block
+        }
+
+        .arrow-down {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 10px solid black;
+            display:inline-block
+        }
+    </style>
+</head>
+<body>
+    <div ng-controller="controller">
+        Search : <input type="text" placeholder="Search name" ng-model="searchname.salary" />
+        <table>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th ng-click="sortData('name')">
+                        Name <div ng-class="getSortClass('name')"></div>
+                    </th>
+                    <th>Date Of Birth</th>
+                    <th>Gender</th>
+                    <th ng-click="sortData('salary')">
+                        Salary (number) <div ng-class="getSortClass('salary')"></div>
+                    </th>
+                    <th>Salary (curency)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="obj in obj | orderBy:sort_item:reverseSort | limitTo :rowLimit | filter: searchname">
+                    <td>{{$index}}</td>
+                    <td>{{obj.name | uppercase}}</td>
+                    <td>{{obj.dateOfBirth | date:"dd/MM/yyyy"}}</td>
+                    <td>{{obj.gender | lowercase}}</td>
+                    <td>{{obj.salary |number:1}}</td>
+                    <td>{{obj.salary | currency:"£﻿"}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br /><br />
+        Rows to display <input type="number" step="1" min="0" max="5" ng-model="rowLimit" />
+        OrderBy
+        <select ng-model="sort_item">
+            <option value="+name">name ASC</option>
+            <option value="-name">name DSC</option>
+            <option value="+salary">salary ASC</option>
+            <option value="-salary">salary DSC</option>
+        </select>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Module and Controller</title>
+	<meta charset="utf-8" />
+    <script src="../Script/angular.min.js"></script>
+    <script src="../Script/Module and Controller/script.js"></script>
+</head>
+<body ng-app="main">
+    <div ng-controller="controller">
+        <div class="alone">
+            {{message}}
+        </div>
+
+        <div class="controller for object" style="margin-top:50px">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td>{{obj.name}}</td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td>{{obj.age}}</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>{{obj.gender}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>

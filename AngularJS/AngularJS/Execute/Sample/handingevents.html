@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html ng-app="main">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="../Script/angular.min.js"></script>
+    <script src="../Script/Handling events/script.js"></script>
+</head>
+<body>
+    <div ng-controller="controller">
+        <table>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Like</td>
+                    <td>Dislike</td>
+                    <td>Like/Dislike</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="obj in obj">
+                    <td>{{obj.name}}</td>
+                    <td>{{obj.like}}</td>
+                    <td>{{obj.dislike}}</td>
+                    <td>
+                        <input type="button" value="Like" ng-click="incrementlike(obj)" />
+                        <input type="button" value="Dislike" ng-click="incrementdislike(obj)" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

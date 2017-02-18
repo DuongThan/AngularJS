@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html ng-app="main">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="../../Script/angular.min.js"></script>
+    <script src="script.js"></script>
+    <link href="../../style/style-table.css" rel="stylesheet" />
+</head>
+<body>
+    <div ng-controller="controller">
+        <select ng-model="selectedview">
+            <option value="view1.html">View List</option>
+            <option value="view2.html">View Table</option>
+        </select>
+        <div ng-include="selectedview">
+
+        </div>
+    </div>
+</body>
+</html>

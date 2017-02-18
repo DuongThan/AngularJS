@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html ng-app="main">
+<head>
+    <title>ng-repeat</title>
+	<meta charset="utf-8" />
+    <script src="../Script/angular.min.js"></script>
+    <script src="../Script/ng-repeat/script.js"></script>
+</head>
+<body>
+    <div ng-controller="controller">
+        <!--<table>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Age</td>
+                    <td>Gender</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="obj in obj">
+                    <td>{{obj.name}}</td>
+                    <td>{{obj.age}}</td>
+                    <td>{{obj.gender}}</td>
+                </tr>
+            </tbody>
+        </table>-->
+        <ul>
+            <li ng-repeat="obj in obj">
+                {{obj.name}} - index = {{$index}}
+                <ul>
+                    <li ng-repeat="gf in obj.girlfriend">
+                        {{gf}} - index = {{$index}}
+                    </li>
+                </ul>
+            </li>
+            <!--<li ng-repeat="obj in obj" ng-init="parentIndex = $index">
+                {{obj.name}} - index = {{$index}}
+                <ul>
+                    <li ng-repeat="gf in obj.girlfriend">
+                        {{gf}} - index = {{parentIndex}}
+                    </li>
+                </ul>
+            </li>-->
+        </ul>
+    </div>
+</body>
+</html>

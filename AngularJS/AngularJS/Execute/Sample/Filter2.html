@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html ng-app="main">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="../Script/angular.min.js"></script>
+    <script src="../Script/Filter2/script.js"></script>
+    <script src="../Script/Filter2/custom-filter.js"></script>
+    <link href="../style/style-table.css" rel="stylesheet" />
+</head>
+<body>
+    <div ng-controller="controller">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="model in model">
+                    <td>{{model.name}}</td>
+                    <td>{{model.age}}</td>
+                    <td>{{model.gender | gender}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
