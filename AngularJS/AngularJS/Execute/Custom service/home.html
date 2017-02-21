@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <script src="../../Script/angular.min.js"></script>
     <script src="script.js"></script>
+    <script src="factory.js"></script>
     <link href="../../style/style-table.css" rel="stylesheet" />
 </head>
 <body>
@@ -12,16 +13,16 @@
         <table>
             <tr>
                 <td>Your string</td>
-                <td><input type="text" /></td>
+                <td><input type="text" ng-model="input" /></td>
             </tr>
             <tr>
                 <td>Result</td>
-                <td><input type="text" /></td>
+                <td><input type="text" ng-model="output" /></td>
             </tr>
             <tr>
                 <td></td>
                 <td>
-                    <input type="button" name="name" value="Process String" />
+                    <input type="button" ng-click="transformstring(input)" value="Process String" />
                 </td>
             </tr>
         </table>

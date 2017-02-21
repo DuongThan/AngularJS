@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="EmployeeServer.asmx" />
+    <Content Include="Execute\Custom service\factory.js" />
     <Content Include="Execute\Custom service\home.html" />
     <Content Include="Execute\Custom service\script.js" />
     <Content Include="Execute\Sample\Filter.html" />
