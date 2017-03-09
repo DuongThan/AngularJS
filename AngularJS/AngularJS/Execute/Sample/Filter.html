@@ -3,8 +3,8 @@
 <head>
     <title></title>
     <meta charset="utf-8" />
-    <script src="../Script/angular.min.js"></script>
-    <script src="../Script/Filter/script.js"></script>
+    <script src="../../Script/angular.min.js"></script>
+    <script src="../../Script/Filter/script.js"></script>
     <style type="text/css">
         table {
             border-collapse: collapse;
@@ -42,7 +42,7 @@
 </head>
 <body>
     <div ng-controller="controller">
-        Search : <input type="text" placeholder="Search name" ng-model="searchname.salary" />
+        Search : <input type="text" placeholder="Search name" ng-model="searchname1.salary" />
         <table>
             <thead>
                 <tr>
@@ -59,12 +59,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="obj in obj | orderBy:sort_item:reverseSort | limitTo :rowLimit | filter: searchname">
+                <tr ng-repeat="obj in obj | orderBy:sort_item:reverseSort | limitTo :rowLimit | filter: searchname1">
                     <td>{{$index}}</td>
                     <td>{{obj.name | uppercase}}</td>
                     <td>{{obj.dateOfBirth | date:"dd/MM/yyyy"}}</td>
                     <td>{{obj.gender | lowercase}}</td>
-                    <td>{{obj.salary |number:1}}</td>
+                    <td>{{obj.salary |number:4}}</td>
                     <td>{{obj.salary | currency:"£﻿"}}</td>
                 </tr>
             </tbody>

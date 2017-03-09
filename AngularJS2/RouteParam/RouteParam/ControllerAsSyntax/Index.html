@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Js/angular.min.js"></script>
+    <script src="Js/angular-route.min.js"></script>
+    <script src="Js/script.js"></script>
+    <style type="text/css">
+        #main{width:800px; margin:0 auto;height:500px}
+        #left{width:300px;height:500px;background-color:#d0d7f5;float:left}
+        #right{width:500px;height:500px;background-color:#a3d6f3;float:left}
+    </style>
+</head>
+<body ng-app="main">
+    <div id="main">
+        <div id="left" ng-controller="Home as h">
+            {{h.message}}
+        </div>
+        <div id="right" ng-controller="Student as std">
+            <ul ng-repeat="student in std.students">
+                <li>{{student.StudentID}}</li>
+                <li>{{student.Name}}</li>
+                <li>{{student.Gender}}</li>
+                <li>{{student.City}}</li>
+            </ul>
+            <button ng-click="std.reload()">Reload data</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title></title>
+    <script src="angular.min.js"></script>
+    <script src="angular-route.min.js"></script>
+    <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="main" ng-app="demoooo" >
+        <div id="header">
+            <h1>Header</h1>
+        </div>
+        <div id="body">
+            <div id="link">
+                <a href="#!/home">Home</a>
+                <a href="#!/Courses">Courses</a>
+                <a href="#!/Student">Student</a>
+            </div>
+            <div id="content">
+                <ng-view></ng-view>
+            </div>
+        </div>
+        <div id="footer">
+            Footer
+        </div>
+    </div>
+</body>
+</html>

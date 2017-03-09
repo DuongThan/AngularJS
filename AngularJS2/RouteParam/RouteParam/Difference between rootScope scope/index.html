@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html ng-app="main">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="angular.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div ng-controller="redController">
+        Red : {{red}} <br />
+        RootScope : {{rootScope}} <br />
+        Blue : <span style="color:red" ng-show="red=='RED'">
+        red is RED
+        </span>
+    </div>
+    <div  ng-controller="blueController">
+        Blue : {{blue}} <br />
+        RootScope : {{rootScope}} <br />
+        Red : <span style="color:red" ng-show="red==undefine">
+            Red is undefine
+        </span>
+    </div>
+</body>
+</html>
