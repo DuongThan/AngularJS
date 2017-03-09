@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html ng-app="validate">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Js/angular.min.js"></script>
+    <script src="Js/script.js"></script>
+    <style type="text/css">
+        #main{width:800px;height:500px; margin:0 auto;border:1px solid #ccc}
+        table{width:500px;margin:0 auto;margin-top:100px;border-collapse:collapse}
+        tr{padding:0;margin:0}
+        td{border:1px solid #ccc}
+    </style>
+</head>
+<body>
+    <div id="main" ng-controller="controller">
+        <form name="frm" novalidate>
+            <table>
+                <tr>
+                    <td>StudentID</td>
+                    <td>
+                        <input type="text" name="studentID" placeholder="ID" ng-model="ID" required/>
+                        <span style="color:red" ng-show="frm.studentID.$dirty && frm.studentID.$invalid">
+                            <span ng-show="frm.studentID.$error.required">ID la bat buoc.</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <input type="text" name="name" placeholder="Name..." ng-model="Name" required/>
+                        <span ng-show="frm.name.$error.required">Ho la bat buoc.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Adddress</td>
+                    <td>
+                        <input type="text" name="address" placeholder="Address..." ng-model="Address" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" name="btnrefresh" value="Reset" ng-click="reset()" />
+                    </td>
+                    <td style="margin-left:50px">
+                        <input type="button" name="submit" value="Submit" ng-click="submit()" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

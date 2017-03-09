@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html ng-app="service">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="js/angular.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div ng-controller="controller">
+        <input type="number" min="0" max="100" step="1" ng-model="so1" /> so thu 1<br />
+        <input type="number" min="0" max="100" step="1" ng-model="so2" /> so thu 2<br />
+        <input type="button" value="Tich" ng-click="Tich()"/>{{so1}}<sup>{{so2}}</sup><br />
+        <input type="text" value="Result" ng-model="ketqua" />
+    </div>
+</body>
+</html>
